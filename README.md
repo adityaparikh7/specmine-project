@@ -1,4 +1,4 @@
-# specmine-phantoms
+# specmine-project
 
 Code for the CS520 SpecMine project: do OpenSpec tasks that are ticked "done"
 name files that never appear, and how does that vary with the repository and

@@ -1,0 +1,38 @@
+# Settings every script reads. Scripts take no command-line arguments;
+# change behaviour here (or with SAMPLE=1 in the environment).
+
+snapshot_date: 2026-07-14          # SpecMine v1.0 snapshot
+window:                            # commit-date window (committed_at, clipped)
+  start: 2024-01-01
+  end: 2026-07-14
+seed: 520
+bootstrap_draws: 1000
+star_bands: [0, 1, 10, 100]        # lower bounds: 0, 1-9, 10-99, 100+
+top_languages: 10
+duckdb_memory_limit: 4GB
+
+# The dataset: drag the SpecMine folder (or its 10 .parquet files) anywhere inside
+# data/. The scripts find it themselves; there is nothing to set here.
+
+# Row counts from the SpecMine README / data dictionary. check_data.py and
+# profile_tables.py stop if a table does not match.
+expected_rows:
+  openspec_code_refs: 435401
+  openspec_artifact_files: 266230
+  repo_trees: 73030
+  spec_files: 470795
+  spec_file_commits: 780335
+  spec_links: 2421323
+  spec_content_features: 468307
+  kiro_files: 98574
+  pull_requests: 5992
+  pr_files: 348141
+
+sample:
+  n_repos: 200                     # OpenSpec repositories with task references, the same number per star band
+
+rq_sample:
+  repos_per_band: 75               # data/rq_sample: 75 x 4 star bands = 300 repositories
+
+rq3:
+  coverage_threshold: 0.5          # below this, RQ3 uses repository-level credit

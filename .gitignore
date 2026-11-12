@@ -1,0 +1,22 @@
+__pycache__/
+.pytest_cache/
+.duckdb_tmp/
+.DS_Store
+Thumbs.db
+
+# The SpecMine dataset is dragged into data/ by each person and never committed.
+# Only our own small outputs inside data/ are tracked.
+data/*
+!data/MANIFEST.csv
+!data/rq_sample/
+!data/sample/
+!data/sample_csv/
+!data/derived/
+!data/frozen/
+# data/rq_sample/ (about 64 MB) is rebuilt by `python run.py explore`.
+
+data/derived/_sample/
+reports/_sample/
+logs/_sample/
+tables/_sample/
+figures/_sample/

@@ -4,10 +4,11 @@
     python run.py check-data        check the dataset you dragged into data/
     python run.py explore           table pages, CSV samples, RQ sample
     python run.py checks            deeper checks and reports/data_report.md
+    python run.py rq1               stages 1-2, RQ1 tables, checkbox analysis, Figures 1-2
     python run.py test              unit tests
     python run.py all               all of the above, in order
 
-Add --sample to `checks` to run it on the small committed sample in data/sample/.
+Add --sample to `checks` or `rq1` to run it on the small committed sample in data/sample/.
 Each step runs its scripts one after another and stops at the first failure.
 """
 import os
@@ -28,6 +29,11 @@ STEPS = {
                "src/checks/rq3_questions.py",
                "src/checks/make_sample.py",     # skipped with --sample
                "src/checks/data_report.py"],
+    "rq1": ["src/01_prepare_refs.py",
+            "src/02_classify_intent.py",
+            "src/05_rq1_prevalence.py",
+            "src/07_checkbox.py",
+            "src/figures_rq1.py"],
     "test": ["-m", "pytest", "-q", "tests"],
 }
 

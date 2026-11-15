@@ -85,7 +85,7 @@ tests/             unit tests
 
 ## How the scripts are written
 
-This is a student project, so the code stays plain and easy to follow:
+The code stays plain and easy to follow:
 
 - One script per step, with a docstring saying what it reads and writes, and
   numbered comments for its steps. No classes and no command-line arguments;
